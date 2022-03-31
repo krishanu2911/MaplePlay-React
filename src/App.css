@@ -1,51 +1,73 @@
-.App {
-  text-align: center;
+@import url("https://maple-ui.netlify.app/CSS/base.css");
+:root{
+    --ecom-bg-dark : #d6d3d1;
+    --ecom-bg-light: rgb(238, 238, 238, 1);
+    --ecom-shadow: 0 3px 6px var( --ecom-bg-dark);
+    --ecom-btn-text-color: #111827;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    display: flex;
+    background-color: #121212;
+    min-height: 100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar{
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color:  #0B0B0C;
+    /* #121212 */
+    /* #0B0B0C */
+    width: 10rem;
 }
-
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.nav-pill{
+    color: white;
+    width: 100%;
+    font-size: 1.5rem;
+    gap: 0.5rem;
+    align-items: center; 
 }
-
-.App-link {
-  color: #61dafb;
+.nav-pill:hover{
+    color: gray;
 }
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
+.topbar{
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1rem;
 }
-
-.brand-title span {
-  color: #ffde59;
+.main-area{
+    flex-direction: column;
+    width: 100%;
 }
-
-.brand-description {
-  font-size: 1.4rem;
+.topbarBtn{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--paragraph-color);
+    background-color: #121212;
+    border: 3px solid var(--section-background-color);
 }
-
-.links {
-  display: flex;
+.banner{
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
 }
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+.lightcolor{
+    color: var(--headline-color);
+}
+.lightbg{
+    background-color: var(--paragraph-color);
+}
+.banner-img{
+    border-radius: 1rem;
+    width: 40rem;
+}
+.banner-side{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.bannerbtn{
+    padding: 1rem;
+    border-radius: 1rem;
 }
