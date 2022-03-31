@@ -1,10 +1,10 @@
 import React from 'react'
-import { Banner } from "../../component/index"
+import { Banner, CategoriesSection } from "../../component/index"
 function Home() {
     return (
         <div>
             <Banner />
-            <h1>HomePage</h1>
+            <CategoriesSection />
         </div>
     )
 }

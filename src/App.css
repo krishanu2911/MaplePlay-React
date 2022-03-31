@@ -8,12 +8,13 @@
 .App{
     display: flex;
     background-color: #121212;
-    min-height: 100vh;
+    min-height: 100%;
 }
 .navbar{
     padding: 1rem;
     flex-direction: column;
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 2rem;
     background-color:  #0B0B0C;
     /* #121212 */
@@ -31,7 +32,7 @@
     color: gray;
 }
 .topbar{
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 1rem;
     padding: 1rem;
 }
@@ -71,3 +72,38 @@
     padding: 1rem;
     border-radius: 1rem;
 }
+.paraColor{
+    color: var(--section-background-color)
+}
+.category-div{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.categories-item{
+    width: 20rem;
+    padding: 1rem;
+    border: 5px solid var(--section-background-color);
+    border-radius: 1rem;
+}
+.category-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.gap-m{
+    gap: 1rem;
+}
+@media only screen and (max-width: 1025px) {
+    .banner{
+        flex-wrap: wrap;
+    }
+    .App{
+        flex-direction: column;
+    }
+    .navbar{
+        width: 100%;
+        flex-direction: row;
+    }
+  }

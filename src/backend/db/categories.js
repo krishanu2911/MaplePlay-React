@@ -8,20 +8,26 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Computer Programming",
+    categoryName: "Stoicism",
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "Stoicism teaches the development of self-control and fortitude as a means of overcoming destructive emotions",
   },
   {
     _id: uuid(),
-    categoryName: "Frontend Development",
+    categoryName: "Socrates",
     description:
-      "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
+      "Socrates believed that philosophy should achieve practical results for the greater well-being of society.",
   },
   {
     _id: uuid(),
-    categoryName: "Backend Development",
+    categoryName: "Plato",
     description:
-      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+      "Plato was a Greek philosopher born in Athens during the Classical period in Ancient Greece.",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Friedrich Nietzsche",
+    description:
+      "Friedrich Wilhelm Nietzsche was a German philosopher, cultural critic and philologist whose work has exerted a profound influence on modern intellectual history.",
   },
 ];
