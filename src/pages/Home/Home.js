@@ -1,9 +1,10 @@
 import React from 'react'
-
+import { Banner, CategoriesSection } from "../../component/index"
 function Home() {
     return (
         <div>
-            <h1>HomePage</h1>
+            <Banner />
+            <CategoriesSection />
         </div>
     )
 }
