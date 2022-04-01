@@ -3,7 +3,6 @@ import {useAxios} from "../../utils/useAxios";
 function CategoriesSection() {
     const  { apiResponse , loading }  = useAxios("/api/categories");
     const { categories } = apiResponse;
-    console.log(categories);
     return (
         <div className='category-div'>
             <h1 className='lightcolor'>Categories</h1>
