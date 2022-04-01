@@ -1,5 +1,5 @@
 import React from "react";
-import { useVideoCategory } from "../../context/videoCategoried";
+import { useVideoCategory } from "../../context/videoCategorized";
 import { useFilter } from "../../context/filter-context";
 import VideoCard from "./VideoCard";
 import "../../App.css";
