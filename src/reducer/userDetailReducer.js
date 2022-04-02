@@ -1,0 +1,4 @@
+const userDetailReducer = () => {
+
+}
+export {userDetailReducer};
