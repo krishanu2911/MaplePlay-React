@@ -1,5 +1,6 @@
 import React from 'react'
 import {useAxios} from "../../utils/useAxios";
+import CategoriesItem from './CategoriesItem';
 function CategoriesSection() {
     const  { apiResponse , loading }  = useAxios("/api/categories");
     const { categories } = apiResponse;
@@ -11,10 +12,7 @@ function CategoriesSection() {
                 loading ? <h1>loading</h1> :
                 categories.map((item) => {
                     return (
-                        <div className='categories-item'>
-                           <h1 className='lightcolor'>{item.categoryName}</h1>
-                           <p className='paraColor'>{item.description}</p>
-                        </div>
+                        <CategoriesItem item={item} />
                     ) 
                 })
             }  

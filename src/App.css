@@ -8,7 +8,7 @@
 .App{
     display: flex;
     background-color: #121212;
-    min-height: 100%;
+    min-height: 100vh;
 }
 .navbar{
     padding: 1rem;
@@ -82,6 +82,7 @@
     gap: 2rem;
 }
 .categories-item{
+    cursor: pointer;
     width: 20rem;
     padding: 1rem;
     border: 5px solid var(--section-background-color);
@@ -94,6 +95,47 @@
 }
 .gap-m{
     gap: 1rem;
+}
+.video-card{
+    display: flex;
+    flex-direction: column;
+    max-width:20rem;
+}
+.video-card-playlist{
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+}
+.position-relative{
+    position: relative;
+}
+.gap-lg{
+    gap: 3rem;
+}
+.padding-m{
+    padding: 1rem;
+}
+.padding-lg{
+    padding: 2rem;
+}
+.padding-sm{
+    padding: 0.5rem;
+}
+.filterBtn{
+    border-radius: 1rem;
+    background-color: var(--section-background-color)
+}
+.video-title-font{
+    font-size: 1.25rem;
+}
+.video-section{
+    justify-content: space-around;
+    align-items: baseline;
+}
+.justify-spacebetween{
+    justify-content: space-between;
 }
 @media only screen and (max-width: 1025px) {
     .banner{

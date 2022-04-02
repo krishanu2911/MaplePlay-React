@@ -1,9 +1,10 @@
 import React from 'react'
-
+import { FilterSection , VideoSection } from "../../component/index"
 function VideoListingPage() {
     return (
         <div>
-            <h1>VideoListingPage</h1>
+            <FilterSection />
+            <VideoSection />
         </div>
     )
 }
