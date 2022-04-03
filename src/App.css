@@ -140,6 +140,12 @@
 .poitner-cursor{
     cursor: pointer;
 }
+.playlist-card-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .playlist-modal-wrap{
     justify-content: center;
     align-items: center;
@@ -166,8 +172,8 @@
     border-radius: 1rem;
     border: 5px solid var(--section-background-color);
 }
-.playlist-card-skin{
-}
+/* .playlist-card-skin{
+} */
 .modal-header{
     display: flex;
     align-items: center;

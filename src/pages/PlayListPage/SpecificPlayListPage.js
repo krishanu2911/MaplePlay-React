@@ -2,8 +2,6 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 import { useUserDetail } from "../../context/userDetail-context";
 import PlayListVideoCard from './PlayListVideoCard';
-import PlayListCard from './PlayListCard';
-import  VideoCard from "../../component/videoSection/VideoCard"
 function SpecificPlayListPage() {
     const {listId} = useParams();
     const { userDetailState } = useUserDetail();

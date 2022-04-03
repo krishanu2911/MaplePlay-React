@@ -21,7 +21,9 @@ const userDetailReducer = (state, action) => {
       
       )
       return { ...state, playlist: [...updateListAfterRemove] };
-
+    case "REMOVE_PLAYLIST" :
+      const updateAfterPlaylistRemove = playlist.filter((item) => item.playlistId !== action.payload )
+      return { ...state, playlist: [...updateAfterPlaylistRemove] };
     case "ADD_VIDEO":
       // const { playlist } = state;
       const { specificPlayListId, playListModalData } = action.payload;
