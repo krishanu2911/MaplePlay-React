@@ -6,7 +6,6 @@ import { useUserDetail } from "../../context/userDetail-context";
 function PlayListCard({ listDetail }) {
   const { playlistname, videoList, playlistId } = listDetail;
   const { userDetailDispatch } = useUserDetail();
-  console.log(listDetail);
   return (
     <div className="playlist-card padding-sm">
       <div className="playlist-card-header">

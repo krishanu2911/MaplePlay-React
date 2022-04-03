@@ -29,7 +29,6 @@ function PlaylistModal() {
     }
   };
   const addVideoToPlaylistHandler = (specificPlayListId) => {
-    console.log(playlist);
     userDetailDispatch({
       type: "ADD_VIDEO",
       payload: { specificPlayListId, playListModalData },
@@ -51,21 +50,26 @@ function PlaylistModal() {
         <div>
           {playlist.map((item) => {
             return (
-              <div>
+              <div className="maple-flex align-center gap-m">
                 <input
                   onClick={() => addVideoToPlaylistHandler(item.playlistId)}
                   checked={item.videoList.includes(playListModalData)}
                   type="checkbox"
                 />
-                <h1 className="lightcolor">{item.playlistname}</h1>
+                <h1 className="lightcolor txt-lg">{item.playlistname}</h1>
               </div>
             );
           })}
         </div>
         {inputToggle && (
+          <div className="maple-flex gap-m">
+          <h1 className="txt-m lightcolor">Name:</h1>
           <input type="text" onChange={(e) => setInputValue(e.target.value)} />
+          </div>
+          
         )}
         <button
+        className="filterBtn padding-sm txt-m boldest-font"
           onClick={() => {
             createPlaylistHandler();
           }}

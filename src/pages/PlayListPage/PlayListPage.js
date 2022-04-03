@@ -9,10 +9,11 @@ function PlayListPage() {
   const [newPlaylistName, setNewPlayListName] = useState("");
   return (
     <div className="padding-m">
-      <div className="maple-flex gap-m playlist-header">
+      <div className="maple-flex gap-m playlist-header maple-wrap">
         <h1 className="lightcolor ">All Playlists</h1>
         <div className="maple-flex gap-m">
            <input
+           value={newPlaylistName}
           type="text"
           onChange={(e) => setNewPlayListName(e.target.value)}
         />
@@ -24,6 +25,7 @@ function PlayListPage() {
                 type: "CREATE_PLAYLIST",
                 payload: newPlaylistName,
               });
+            setNewPlayListName("")
           }}
         >
           Add new playlist
@@ -32,7 +34,7 @@ function PlayListPage() {
         
       </div>
 
-      <div className="maple-flex-xy-center">
+      <div className="maple-flex-xy-center maple-wrap gap-m">
         {playlist.length ? (
           playlist.map((item) => {
             return <PlayListCard listDetail={item} key={item.playlistId} />;

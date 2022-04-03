@@ -25,14 +25,12 @@ const userDetailReducer = (state, action) => {
       const updateAfterPlaylistRemove = playlist.filter((item) => item.playlistId !== action.payload )
       return { ...state, playlist: [...updateAfterPlaylistRemove] };
     case "ADD_VIDEO":
-      // const { playlist } = state;
       const { specificPlayListId, playListModalData } = action.payload;
       const findPlayListobj = playlist.find((item) => item.playlistId === specificPlayListId);
       const { videoList } = findPlayListobj;
       const findVideoInPlayList = videoList.find(
         (item) => item._id === playListModalData._id
       );
-      console.log(findPlayListobj);
       if (findVideoInPlayList) {
         const updatedPlayList = playlist.map((item) =>
           item.playlistId === findPlayListobj.playlistId

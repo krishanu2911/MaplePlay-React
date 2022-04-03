@@ -176,6 +176,9 @@
     align-items: center;
     justify-content: space-between;
 }
+.align-center{
+    align-items: center;
+}
 /* .playlist-card-skin{
 } */
 .modal-header{
