@@ -4,14 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import PlayListCard from "./PlayListCard";
 function PlayListPage() {
     const videoListNavigate = useNavigate()
-    const {userDetailState, userDetailDispatch} = useUserDetail();
+    const {userDetailState} = useUserDetail();
     const {playlist} = userDetailState;
     return (
-        <div className='maple-flex-xy-center'>
+        <div className='padding-m'>
+            <h1 className='lightcolor '>Playlists</h1>
+            <div className='maple-flex-xy-center'>
+            
             {
                playlist.length ? playlist.map((item) => {
                    return<PlayListCard listDetail={item} key={item.playlistId}/>
-                //    return<h1 className='lightcolor'>{item.playlistname}</h1>
                })
                :
                <button 
@@ -23,6 +25,8 @@ function PlayListPage() {
                >Create Playlist</button>
             }
         </div>
+        </div>
+        
     )
 }
 export default PlayListPage;

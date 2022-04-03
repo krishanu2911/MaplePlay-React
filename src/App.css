@@ -157,6 +157,17 @@
     height: fit-content;
     padding: 1rem;
 }
+.playlist-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    border-radius: 1rem;
+    border: 5px solid var(--section-background-color);
+}
+.playlist-card-skin{
+}
 .modal-header{
     display: flex;
     align-items: center;
