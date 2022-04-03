@@ -1,5 +1,6 @@
 import Home from "./Home/Home.js";
 import PlayListPage from './PlayListPage/PlayListPage.js';
+import SpecificPlayListPage from "./PlayListPage/SpecificPlayListPage.js";
 import VideoListingPage from "./VideoListPage/VideoListingPage.js";
 import Liked from "./Liked/Liked.js";
 import WatchLater from "./WatchLater/WatchLater.js";
@@ -13,4 +14,5 @@ export {
     WatchLater,
     History,
     error404page,
+    SpecificPlayListPage
 }

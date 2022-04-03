@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
 const userDetailReducer = (state, action) => {
+  const { playlist } = state;
   switch (action.type) {
     case "CREATE_PLAYLIST":
       return {
@@ -9,8 +10,20 @@ const userDetailReducer = (state, action) => {
           { playlistname: action.payload, playlistId: uuid(), videoList: [] },
         ],
       };
+    case "REMOVE_VIDEO" :
+      const { videoItem ,listDetail } = action.payload;
+      const {playlistId} = listDetail;
+      const findVideoPlayListobj = playlist.find((item) => item.playlistId === playlistId);
+      const updateListAfterRemove = playlist.map((item) => item.playlistId === findVideoPlayListobj.playlistId ? {
+        ...item,
+        videoList: item.videoList.filter((item) => item._id !== videoItem._id)
+      } : item
+      
+      )
+      return { ...state, playlist: [...updateListAfterRemove] };
+
     case "ADD_VIDEO":
-      const { playlist } = state;
+      // const { playlist } = state;
       const { specificPlayListId, playListModalData } = action.payload;
       const findPlayListobj = playlist.find((item) => item.playlistId === specificPlayListId);
       const { videoList } = findPlayListobj;
