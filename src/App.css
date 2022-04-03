@@ -172,6 +172,10 @@
     border-radius: 1rem;
     border: 5px solid var(--section-background-color);
 }
+.playlist-header{
+    align-items: center;
+    justify-content: space-between;
+}
 /* .playlist-card-skin{
 } */
 .modal-header{
