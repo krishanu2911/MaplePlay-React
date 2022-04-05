@@ -4,9 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { VideoCategoryProvider } from "./context/videoCategorized";
-import { FilterContextProvider } from "./context/filter-context";
-import { UserDetailContextProvider } from "./context/userDetail-context";
+import { VideoCategoryProvider, FilterContextProvider, UserDetailContextProvider } from "./context/index";
 import PlaylistModal from "./component/PlaylistModal/PlaylistModal"
 // Call make Server
 makeServer();
