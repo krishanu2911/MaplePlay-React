@@ -10,7 +10,7 @@ const VideoCategoryProvider = ({ children }) => {
         }
     },[loading])
   return (
-    <VideoCategory.Provider value={{ videoList }}>
+    <VideoCategory.Provider value={{ videoList , loading }}>
       {children}
     </VideoCategory.Provider>
   );
