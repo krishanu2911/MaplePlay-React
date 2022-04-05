@@ -6,9 +6,10 @@ function Liked() {
   const { userDetailState } = useUserDetail();
   const { likedlist } = userDetailState;
   return (
-    <div>
+    <div className="padding-m">
+        <h1 className="txt-gray txt-xl">#LikedVideoList</h1>
       {likedlist.length ? (
-        <section>
+        <section className="maple-flex gap-m maple-wrap">
           {likedlist.map((item) => {
             return (
               <ListVideoCard

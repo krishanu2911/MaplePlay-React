@@ -10,7 +10,7 @@ function PlayListPage() {
   return (
     <div className="padding-m">
       <div className="maple-flex gap-m playlist-header maple-wrap">
-        <h1 className="lightcolor ">All Playlists</h1>
+        <h1 className="txt-gray txt-xl">#AllPlaylists</h1>
         <div className="maple-flex gap-m">
            <input
            value={newPlaylistName}

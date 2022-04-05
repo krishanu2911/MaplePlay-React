@@ -10,7 +10,7 @@ function SpecificPlayListPage() {
     const {videoList,playlistname} = foundplaylist;
     return (
         <div className='padding-m'>
-            <h1 className='lightcolor'>Playlist: {playlistname}</h1>
+            <h1 className="txt-gray txt-xl">#Playlist: {playlistname}</h1>
             {
               videoList.length ? videoList.map((item) => {
                     return< ListVideoCard listDetail={foundplaylist} videoItem={item} key={item._id} listType="playlist"/>
