@@ -179,8 +179,6 @@
 .align-center{
     align-items: center;
 }
-/* .playlist-card-skin{
-} */
 .modal-header{
     display: flex;
     align-items: center;
@@ -188,6 +186,22 @@
 }
 .display-none{
     display: none;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.singlevideo-div{
+    width: 35rem;
+}
+.justify-flex-end{
+    justify-content: flex-end;
+}
+.margin-bottom{
+    margin-bottom: 1rem;
+}
+.flex-end{
+    justify-content: flex-end;
 }
 @media only screen and (max-width: 1025px) {
     .banner{
