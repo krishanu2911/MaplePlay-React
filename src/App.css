@@ -137,6 +137,58 @@
 .justify-spacebetween{
     justify-content: space-between;
 }
+.poitner-cursor{
+    cursor: pointer;
+}
+.playlist-card-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.playlist-modal-wrap{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+.playlist-modal{
+    border-radius: 0.5rem;
+    border: 3px solid var(--paragraph-color);
+    background-color: #0B0B0C;
+    width: 20rem;
+    height: fit-content;
+    padding: 1rem;
+}
+.playlist-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    border-radius: 1rem;
+    border: 5px solid var(--section-background-color);
+}
+.playlist-header{
+    align-items: center;
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+/* .playlist-card-skin{
+} */
+.modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.display-none{
+    display: none;
+}
 @media only screen and (max-width: 1025px) {
     .banner{
         flex-wrap: wrap;

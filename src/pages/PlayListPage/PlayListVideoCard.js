@@ -1,11 +1,11 @@
 import React from "react";
-import { FaClock, FaList } from "react-icons/fa";
+import { FaClock, FaList , FaTrash } from "react-icons/fa";
 import "../../App.css";
 import { useUserDetail } from "../../context/userDetail-context";
-function VideoCard({ videoItem }) {
+function PlayListVideoCard({ videoItem ,listDetail }) {
+    const { playlistId } = listDetail;
   const {
-    setModalDisplay,
-    setPlayListModalData,
+    userDetailState, userDetailDispatch
   } = useUserDetail();
   return (
     <div className="video-card">
@@ -22,15 +22,14 @@ function VideoCard({ videoItem }) {
         <h1 className="txt-m  txt-gray">{videoItem.creator}</h1>
         <div
           onClick={() => {
-            setPlayListModalData(videoItem);
-            setModalDisplay(true);
+            userDetailDispatch({type:"REMOVE_VIDEO" , payload:{videoItem ,listDetail}})
           }}
-          className="poitner-cursor"
+          className="poitner-cursor lightcolor"
         >
-          <FaList />
+          <FaTrash />
         </div>
       </div>
     </div>
   );
 }
-export default VideoCard;
+export default PlayListVideoCard;
