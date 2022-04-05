@@ -6,8 +6,10 @@ import { FaList, FaThumbsUp, FaClock } from "react-icons/fa";
 function SingleVideoPage() {
   const { videoId } = useParams();
   const [singleVideoDetail, setSingleVideoDetail] = useState({});
-  const { setModalDisplay, setPlayListModalData } = useUserDetail();
+  const { setModalDisplay, setPlayListModalData, userDetailState, userDetailDispatch } = useUserDetail();
+  const { likedlist } = userDetailState
   const { videoList, loading } = useVideoCategory();
+  const videoInLikedList = likedlist.find((item) => item._id === singleVideoDetail._id)
   useEffect(() => {
     if (!loading) {
       const foundSingleVideoInList = videoList.find(
@@ -36,7 +38,10 @@ function SingleVideoPage() {
            <div className="flex-column gap-m">
             <h1 className="txt-lg lightcolor">{singleVideoDetail.title}</h1>
             <div className="maple-flex gap-m">
-              <FaThumbsUp className="txt-gray poitner-cursor txt-lg" />
+              <FaThumbsUp 
+              className={`poitner-cursor ${videoInLikedList ? "lightcolor" : "txt-gray"} txt-lg`}
+              onClick={() => userDetailDispatch({ type: "LIKE", payload: singleVideoDetail })}
+              />
               <FaClock className="txt-gray poitner-cursor txt-lg" />
               <FaList
                 onClick={() => {

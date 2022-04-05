@@ -5,6 +5,7 @@ import Banner from "./Banner";
 import CategoriesSection from './Categories/CategoriesSection';
 import FilterSection from "./FilterSection/FilterSection";
 import VideoSection from "./videoSection/VideoSection";
+import ListVideoCard from "./ListVideoCard/ListVideoCard";
 export {
     Navbar,
     Footer,
@@ -12,5 +13,6 @@ export {
     Banner,
     CategoriesSection,
     FilterSection,
-    VideoSection
+    VideoSection,
+    ListVideoCard
 }
