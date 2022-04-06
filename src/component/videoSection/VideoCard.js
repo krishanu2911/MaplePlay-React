@@ -18,27 +18,24 @@ function VideoCard({ videoItem }) {
         <Link to={`/singlevideo/${videoItem._id}`}>
         <div
         onClick={() => userDetailDispatch({type:"HISTORY" , payload:{watchedVideo: videoItem, signal:"watched"}})}
-        // onClick={() => userDetailDispatch({type:"ADD_HISTORY",payload:videoItem})}
         >
         <img src={videoItem.thumbnail}  /> 
         </div>
-         
-        
       </Link>
       <h1 className="video-title-font lightcolor bold-font">
         {videoItem.title}
       </h1>
-      <div className="maple-flex justify-spacebetween lightcolor">
+      <div className="maple-flex justify-spacebetween lightcolor ">
         <h1 className="txt-m  txt-gray">{videoItem.creator}</h1>
         <div className="maple-flex gap-m">
           <FaThumbsUp
-            className={`poitner-cursor ${videoInLikedList ? "lightcolor" : "txt-gray"}`}
+            className={`poitner-cursor ${videoInLikedList ? "lightcolor" : "txt-gray"} txt-lg`}
             onClick={() =>
               userDetailDispatch({ type: "LIKE", payload: videoItem })
             }
           />
           <FaClock 
-            className={`poitner-cursor ${videoInWatchLaterlist ? "lightcolor" : "txt-gray"}`}
+            className={`poitner-cursor ${videoInWatchLaterlist ? "lightcolor" : "txt-gray"} txt-lg`}
             onClick={() =>
               userDetailDispatch({ type: "WATCH_LATER", payload: videoItem })
             }
@@ -48,7 +45,7 @@ function VideoCard({ videoItem }) {
               setPlayListModalData(videoItem);
               setModalDisplay(true);
             }}
-            className="poitner-cursor"
+            className="poitner-cursor txt-lg"
           >
             <FaList />
           </div>

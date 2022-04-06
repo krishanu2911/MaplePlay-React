@@ -22,7 +22,7 @@ function WatchLater() {
           })}
         </section>
       ) : (
-        <h1 className="lightcolor txt-center">You have not watchlaterlist any Video</h1>
+        <h1 className="lightcolor txt-center">You have not added any video to watchlaterlist</h1>
       )}
     </div>
   );

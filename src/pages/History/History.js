@@ -32,7 +32,7 @@ function History() {
         </section>
       ) : (
         <h1 className="lightcolor txt-center">
-          You have not watchlaterlist any Video
+          You have not watched any Video
         </h1>
       )}
     </div>
