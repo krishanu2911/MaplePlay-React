@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 const userDetailReducer = (state, action) => {
-  const { playlist , likedlist , watchlaterlist } = state;
+  const { playlist , likedlist , watchlaterlist ,historylist } = state;
   switch (action.type) {
     case "CREATE_PLAYLIST":
       return {
@@ -51,7 +51,6 @@ const userDetailReducer = (state, action) => {
       }
     case "LIKE" :
       const likedVideo = action.payload; 
-      console.log(likedVideo)
       const findVideoInLikeList = likedlist.find((item) => item._id === likedVideo._id)
       if(findVideoInLikeList){
         const updatedLikedList = likedlist.filter((item) => item._id !== likedVideo._id)
@@ -62,7 +61,6 @@ const userDetailReducer = (state, action) => {
       }
       case "WATCH_LATER" :
         const watchLaterVideo = action.payload; 
-        console.log(watchLaterVideo)
         const findVideoInWatchLaterList = watchlaterlist.find((item) => item._id === watchLaterVideo._id)
         if(findVideoInWatchLaterList){
           const updatedWatchLaterList = watchlaterlist.filter((item) => item._id !== watchLaterVideo._id)
@@ -71,6 +69,17 @@ const userDetailReducer = (state, action) => {
         else{
           return {...state,watchlaterlist:[...state.watchlaterlist,watchLaterVideo]}
         }
+      case "HISTORY" :
+        const{ watchedVideo , signal }= action.payload;
+        if(signal==="watched"){
+          return {...state,historylist:[...state.historylist,watchedVideo]}
+        }
+        if(signal==="remove"){
+          const updatedHistoryList = historylist.filter((item) => item._id !== watchedVideo._id)
+          return {...state,historylist:[...updatedHistoryList]}
+        }
+      case "CLEAR_HISTORY" :
+        return{...state,historylist:[]}
   }
 };
 export { userDetailReducer };

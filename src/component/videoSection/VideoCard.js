@@ -15,8 +15,15 @@ function VideoCard({ videoItem }) {
   const videoInWatchLaterlist = watchlaterlist.find((item) => item._id === videoItem._id)
   return (
     <div className="video-card">
-      <Link to={`/singlevideo/${videoItem._id}`}>
-        <img src={videoItem.thumbnail} />
+        <Link to={`/singlevideo/${videoItem._id}`}>
+        <div
+        onClick={() => userDetailDispatch({type:"HISTORY" , payload:{watchedVideo: videoItem, signal:"watched"}})}
+        // onClick={() => userDetailDispatch({type:"ADD_HISTORY",payload:videoItem})}
+        >
+        <img src={videoItem.thumbnail}  /> 
+        </div>
+         
+        
       </Link>
       <h1 className="video-title-font lightcolor bold-font">
         {videoItem.title}
