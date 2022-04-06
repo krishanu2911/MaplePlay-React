@@ -10,8 +10,9 @@ function VideoCard({ videoItem }) {
     userDetailDispatch,
     userDetailState
   } = useUserDetail();
-  const {  likedlist } = userDetailState;
+  const {  likedlist, watchlaterlist } = userDetailState;
   const videoInLikedList = likedlist.find((item) => item._id === videoItem._id)
+  const videoInWatchLaterlist = watchlaterlist.find((item) => item._id === videoItem._id)
   return (
     <div className="video-card">
       <Link to={`/singlevideo/${videoItem._id}`}>
@@ -29,6 +30,12 @@ function VideoCard({ videoItem }) {
               userDetailDispatch({ type: "LIKE", payload: videoItem })
             }
           />
+          <FaClock 
+            className={`poitner-cursor ${videoInWatchLaterlist ? "lightcolor" : "txt-gray"}`}
+            onClick={() =>
+              userDetailDispatch({ type: "WATCH_LATER", payload: videoItem })
+            }
+            />
           <div
             onClick={() => {
               setPlayListModalData(videoItem);
@@ -38,8 +45,7 @@ function VideoCard({ videoItem }) {
           >
             <FaList />
           </div>
-          <div>
-            <FaClock />
+          <div> 
           </div>
         </div>
       </div>

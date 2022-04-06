@@ -31,6 +31,9 @@ function ListVideoCard({ videoItem, listDetail, listType }) {
             if (listType === "like") {
               userDetailDispatch({ type: "LIKE", payload: videoItem });
             }
+            if (listType === "watchlater") {
+              userDetailDispatch({ type: "WATCH_LATER", payload: videoItem });
+            }
           }}
           className="poitner-cursor lightcolor"
         >

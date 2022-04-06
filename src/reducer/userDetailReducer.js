@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 const userDetailReducer = (state, action) => {
-  const { playlist , likedlist } = state;
+  const { playlist , likedlist , watchlaterlist } = state;
   switch (action.type) {
     case "CREATE_PLAYLIST":
       return {
@@ -60,6 +60,17 @@ const userDetailReducer = (state, action) => {
       else{
         return {...state,likedlist:[...state.likedlist,likedVideo]}
       }
+      case "WATCH_LATER" :
+        const watchLaterVideo = action.payload; 
+        console.log(watchLaterVideo)
+        const findVideoInWatchLaterList = watchlaterlist.find((item) => item._id === watchLaterVideo._id)
+        if(findVideoInWatchLaterList){
+          const updatedWatchLaterList = watchlaterlist.filter((item) => item._id !== watchLaterVideo._id)
+          return {...state,watchlaterlist:[...updatedWatchLaterList]}
+        }
+        else{
+          return {...state,watchlaterlist:[...state.watchlaterlist,watchLaterVideo]}
+        }
   }
 };
 export { userDetailReducer };
