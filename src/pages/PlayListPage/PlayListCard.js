@@ -9,7 +9,7 @@ function PlayListCard({ listDetail }) {
   return (
     <div className="playlist-card padding-sm">
       <div className="playlist-card-header">
-        <h1 className="lightcolor txt-lg txt-center">{playlistname}</h1>
+        <h1 className="txt-gray txt-lg">#{playlistname}</h1>
         <div
           className="lightcolor poitner-cursor"
           onClick={() => {

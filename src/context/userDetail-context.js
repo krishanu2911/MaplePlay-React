@@ -7,8 +7,8 @@ const UserDetailContextProvider = ({ children }) => {
   const [playListModalData ,setPlayListModalData ] = useState({})
   const [userDetailState, userDetailDispatch] = useReducer(userDetailReducer, {
     playlist: [],
+    likedlist:[]
   });
-  // console.log(userDetailState.playlist)
   return (
     <UserDetailContext.Provider value={{ userDetailState, userDetailDispatch, modalDisplay, setModalDisplay , playListModalData ,setPlayListModalData }}>
       {children}

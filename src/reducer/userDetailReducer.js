@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 const userDetailReducer = (state, action) => {
-  const { playlist } = state;
+  const { playlist , likedlist } = state;
   switch (action.type) {
     case "CREATE_PLAYLIST":
       return {
@@ -48,6 +48,17 @@ const userDetailReducer = (state, action) => {
             : item
         );
         return { ...state, playlist: [...updatedPlayList] };
+      }
+    case "LIKE" :
+      const likedVideo = action.payload; 
+      console.log(likedVideo)
+      const findVideoInLikeList = likedlist.find((item) => item._id === likedVideo._id)
+      if(findVideoInLikeList){
+        const updatedLikedList = likedlist.filter((item) => item._id !== likedVideo._id)
+        return {...state,likedlist:[...updatedLikedList]}
+      }
+      else{
+        return {...state,likedlist:[...state.likedlist,likedVideo]}
       }
   }
 };
