@@ -7,9 +7,10 @@ function SingleVideoPage() {
   const { videoId } = useParams();
   const [singleVideoDetail, setSingleVideoDetail] = useState({});
   const { setModalDisplay, setPlayListModalData, userDetailState, userDetailDispatch } = useUserDetail();
-  const { likedlist } = userDetailState
+  const { likedlist ,watchlaterlist} = userDetailState
   const { videoList, loading } = useVideoCategory();
   const videoInLikedList = likedlist.find((item) => item._id === singleVideoDetail._id)
+  const videoInWatchLaterlist = watchlaterlist.find((item) => item._id === singleVideoDetail._id)
   useEffect(() => {
     if (!loading) {
       const foundSingleVideoInList = videoList.find(
@@ -42,7 +43,10 @@ function SingleVideoPage() {
               className={`poitner-cursor ${videoInLikedList ? "lightcolor" : "txt-gray"} txt-lg`}
               onClick={() => userDetailDispatch({ type: "LIKE", payload: singleVideoDetail })}
               />
-              <FaClock className="txt-gray poitner-cursor txt-lg" />
+              <FaClock 
+              className={`poitner-cursor ${videoInWatchLaterlist ? "lightcolor" : "txt-gray"} txt-lg`}
+              onClick={() => userDetailDispatch({ type: "WATCH_LATER", payload: singleVideoDetail })}
+              />
               <FaList
                 onClick={() => {
                   setPlayListModalData(singleVideoDetail);

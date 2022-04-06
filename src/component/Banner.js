@@ -1,6 +1,8 @@
 import React from "react";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 function Banner() {
+  const exploreNavigate = useNavigate();
   return (
     <div className="banner">
       <img
@@ -10,7 +12,9 @@ function Banner() {
       />
       <div className="banner-side">
         <h1 className="lightcolor txt-lg txt-center">A streaming platform to watch videos related to philosophy.</h1>
-        <button className="bannerbtn lightbg txt-lg boldest-font">Explore more</button>
+        <button 
+        onClick={() => exploreNavigate("/videolist")}
+        className="bannerbtn lightbg txt-lg boldest-font poitner-cursor">Explore more</button>
       </div>
     </div>
   );

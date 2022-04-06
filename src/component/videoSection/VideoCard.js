@@ -10,36 +10,46 @@ function VideoCard({ videoItem }) {
     userDetailDispatch,
     userDetailState
   } = useUserDetail();
-  const {  likedlist } = userDetailState;
+  const {  likedlist, watchlaterlist } = userDetailState;
   const videoInLikedList = likedlist.find((item) => item._id === videoItem._id)
+  const videoInWatchLaterlist = watchlaterlist.find((item) => item._id === videoItem._id)
   return (
     <div className="video-card">
-      <Link to={`/singlevideo/${videoItem._id}`}>
-        <img src={videoItem.thumbnail} />
+        <Link to={`/singlevideo/${videoItem._id}`}>
+        <div
+        onClick={() => userDetailDispatch({type:"HISTORY" , payload:{watchedVideo: videoItem, signal:"watched"}})}
+        >
+        <img src={videoItem.thumbnail}  /> 
+        </div>
       </Link>
       <h1 className="video-title-font lightcolor bold-font">
         {videoItem.title}
       </h1>
-      <div className="maple-flex justify-spacebetween lightcolor">
+      <div className="maple-flex justify-spacebetween lightcolor ">
         <h1 className="txt-m  txt-gray">{videoItem.creator}</h1>
         <div className="maple-flex gap-m">
           <FaThumbsUp
-            className={`poitner-cursor ${videoInLikedList ? "lightcolor" : "txt-gray"}`}
+            className={`poitner-cursor ${videoInLikedList ? "lightcolor" : "txt-gray"} txt-lg`}
             onClick={() =>
               userDetailDispatch({ type: "LIKE", payload: videoItem })
             }
           />
+          <FaClock 
+            className={`poitner-cursor ${videoInWatchLaterlist ? "lightcolor" : "txt-gray"} txt-lg`}
+            onClick={() =>
+              userDetailDispatch({ type: "WATCH_LATER", payload: videoItem })
+            }
+            />
           <div
             onClick={() => {
               setPlayListModalData(videoItem);
               setModalDisplay(true);
             }}
-            className="poitner-cursor"
+            className="poitner-cursor txt-lg"
           >
             <FaList />
           </div>
-          <div>
-            <FaClock />
+          <div> 
           </div>
         </div>
       </div>

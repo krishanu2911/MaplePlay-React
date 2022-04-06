@@ -7,14 +7,14 @@ function ListVideoCard({ videoItem, listDetail, listType }) {
   const { userDetailDispatch } = useUserDetail();
   return (
     <div className="video-card">
-      <div className="position-relative">
         <Link to={`/singlevideo/${videoItem._id}`}>
-          <img src={videoItem.thumbnail} />
+          <div
+          onClick={() => userDetailDispatch({type:"HISTORY" , payload:{watchedVideo: videoItem, signal:"watched"}})}
+          >
+           <img src={videoItem.thumbnail} />
+          </div>
+          
         </Link>
-        <div className="txt-lg video-card-playlist">
-          <FaClock />
-        </div>
-      </div>
       <h1 className="video-title-font lightcolor bold-font">
         {videoItem.title}
       </h1>
@@ -30,6 +30,12 @@ function ListVideoCard({ videoItem, listDetail, listType }) {
             }
             if (listType === "like") {
               userDetailDispatch({ type: "LIKE", payload: videoItem });
+            }
+            if (listType === "watchlater") {
+              userDetailDispatch({ type: "WATCH_LATER", payload: videoItem });
+            }
+            if (listType === "history") {
+              userDetailDispatch({ type: "HISTORY", payload:{watchedVideo: videoItem, signal:"remove"} });
             }
           }}
           className="poitner-cursor lightcolor"
