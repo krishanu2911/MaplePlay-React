@@ -1,3 +1,15 @@
-## Video Library Backend
+# Maple Play
+## - Video Library React app
 
-This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.
+# Live App Link
+https://maple-play.netlify.app/
+
+# Tech Stack
+-React.js
+-Neog Mockbee backend
+
+# App Preview
+
+
+https://user-images.githubusercontent.com/75560307/162191353-8147547b-2d6a-4cb6-b90d-aa29a07f376a.mp4
+
