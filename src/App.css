@@ -127,6 +127,10 @@
     border-radius: 1rem;
     background-color: var(--section-background-color)
 }
+.unactiveBtn{
+    border-radius: 1rem;
+    background-color: gray;
+}
 .video-title-font{
     font-size: 1.25rem;
 }
