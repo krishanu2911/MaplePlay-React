@@ -127,6 +127,11 @@
     border-radius: 1rem;
     background-color: var(--section-background-color)
 }
+.unactiveBtn{
+    border-radius: 1rem;
+    color:var(--lightest-gray);
+    background-color: var(--dark-gray);
+}
 .video-title-font{
     font-size: 1.25rem;
 }
@@ -202,6 +207,18 @@
 }
 .flex-end{
     justify-content: flex-end;
+}
+.maple-flex-col-xy-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+}
+.width-100{
+    width: 100%;
+}
+.login-div{
+    width: 10rem;
 }
 @media only screen and (max-width: 1025px) {
     .banner{

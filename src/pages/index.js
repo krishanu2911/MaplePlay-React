@@ -7,6 +7,8 @@ import WatchLater from "./WatchLater/WatchLater.js";
 import History from "./History/History.js";
 import error404page from "./error404page/error404page.js";
 import SingleVideoPage from "./SingleVideoPage/SingleVideoPage.js";
+import Login from "./Login/Login.js";
+import Signup from "./Signup/Signup.js";
 export {
     Home,
     PlayListPage,
@@ -16,5 +18,7 @@ export {
     History,
     error404page,
     SpecificPlayListPage,
-    SingleVideoPage
+    SingleVideoPage,
+    Login,
+    Signup
 }

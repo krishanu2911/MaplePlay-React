@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import {Home,PlayListPage,VideoListingPage , Liked, History, WatchLater , SpecificPlayListPage ,SingleVideoPage} from "../pages/index"
+import {Home,PlayListPage,VideoListingPage , Liked, History, WatchLater , SpecificPlayListPage ,SingleVideoPage ,Login , Signup} from "../pages/index"
 function RoutePath() {
     return (
         <Routes>
@@ -12,6 +12,8 @@ function RoutePath() {
             <Route path='/liked' element={<Liked />}/>
             <Route path='/watchlater' element={<WatchLater />}/>
             <Route path='/history' element={<History />}/>
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
         </Routes>
     )
 }
