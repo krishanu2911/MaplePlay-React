@@ -129,7 +129,8 @@
 }
 .unactiveBtn{
     border-radius: 1rem;
-    background-color: gray;
+    color:var(--lightest-gray);
+    background-color: var(--dark-gray);
 }
 .video-title-font{
     font-size: 1.25rem;
